@@ -1,4 +1,4 @@
-def decrypt(self, code: List[int], k: int) -> List[int]:
+def decrypt(code: List[int], k: int) -> List[int]:
         x = len(code)
         result = [0] * x
         if k == 0:
