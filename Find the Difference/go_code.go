@@ -1,5 +1,7 @@
 package main
 import "fmt"
+
+// XOR (fastest)
 func findDifference(s string, t string) string {
     result := byte(0)
     for i:= 0; i< len(s); i++ {
@@ -12,6 +14,13 @@ func findDifference(s string, t string) string {
     return string(result)
 }
 
+// sum of ASCII values
+func findDifferencesASCIIChar(s string, t string) string {
+    sum := 0
+    for _, c := range t { sum += int(c)}
+    for _, c := range s { sum -= int(c)}
+    return string(sum)
+}
 
 func main() {
     s := "abcd"
