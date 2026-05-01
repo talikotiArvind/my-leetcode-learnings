@@ -11,3 +11,12 @@ def findLHS(nums: List[int]) -> int:
             if nums[right] - nums[left] == 1:
                 best = max(best, right - left + 1)
         return best
+
+# Dict (Hash Map) approach
+def findLHS(nums: List[int]) -> int:
+        freq = Counter(nums)
+        best = 0
+        for num in freq:
+            if num + 1 in freq:
+                best = max(best, freq[num] + freq[num + 1])
+        return best
