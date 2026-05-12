@@ -21,4 +21,25 @@ class LinkedList:
         last_node.next = new_node
         
     
-    
+    # Deletion
+    def delete(self, value):
+        current = self.head
+        if current and current.data == value:
+            self.head = current.next
+            return
+        previous = None
+        while current and current.data != value:
+            previous = current
+            current = current.next
+        
+        if current:
+            previous.next = current.next
+            
+    # Search
+    def find(self, data):
+        current = self.head
+        while current:
+            if current.data == data:
+                return True
+            current = current.next
+        return False
