@@ -1,3 +1,5 @@
+# non sliding window approach
+
 def countGoodSubstrings(s: str) -> int:
         n = len(s)
         count = 0
